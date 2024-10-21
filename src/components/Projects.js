@@ -7,25 +7,18 @@ const projects = [
         technologies: ["Python", "PyTorch", "Transformers", "Scikit-learn", "Pandas", "Numpy", "LLM"]
     },
     {
+        title: "English Conversation Application with GPT Integration",
+        description: "Developed a web application that enables users to interact with an AI powered by GPT models in English. The app provides a user-friendly interface for natural language conversations with advanced language models.",
+        date: "2024/02",
+        link: "#",
+        technologies: ["Python", "Streamlit", "OpenAI API"]
+    },
+    {
         title: "Implemented Elastic Deformation from Scratch",
         description: "Developed a custom implementation of Elastic Deformation, an advanced data augmentation technique. This algorithm distorts images while preserving their overall structure, generating new training samples. The method enhances model robustness and generalization in image recognition tasks.",
         date: "2023/07",
         link: "#",
         technologies: ["Python", "NumPy", "Pillow", "Image Processing"]
-    },
-    {
-        title: "Sample Project 3",
-        description: "Implemented a deep reinforcement learning algorithm to teach robots complex manipulation tasks in simulated environments.",
-        date: "202",
-        link: "#",
-        technologies: ["Python", "TensorFlow", "OpenAI Gym"]
-    },
-    {
-        title: "Sample Project 4",
-        description: "Developed a GAN-based system for generating synthetic training data, improving model performance in low-data scenarios.",
-        date: "2020",
-        link: "#",
-        technologies: ["Python", "PyTorch", "NumPy", "Matplotlib"]
     }
 ];
 
