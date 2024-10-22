@@ -1,17 +1,30 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 
-const LanguageSwitcher = () => {
-    const { i18n } = useTranslation();
+const LanguageSwitcher = ({ setLanguage, currentLanguage }) => {
 
-    const changeLanguage = (lng) => {
-        i18n.changeLanguage(lng);
+    const changeLanguage = (lang) => {
+        setLanguage(lang);
+        // navigate(`/${lang}`);
     };
 
     return (
-        <div>
-            <button onClick={() => changeLanguage('en')}>English</button>
-            <button onClick={() => changeLanguage('ja')}>日本語</button>
+        <div className="fixed top-6 right-6 flex space-x-2">
+            <button
+                onClick={() => changeLanguage('en')}
+                className={`px-3 py-1 rounded-md text-sm font-medium ${
+                    currentLanguage === 'en' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                }`}
+            >
+                EN
+            </button>
+            <button
+                onClick={() => changeLanguage('ja')}
+                className={`px-3 py-1 rounded-md text-sm font-medium ${
+                    currentLanguage === 'ja' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                }`}
+            >
+                日本語
+            </button>
         </div>
     );
 };
