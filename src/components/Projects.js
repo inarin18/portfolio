@@ -4,6 +4,8 @@ import EnglishConversationAppJa from '../articles/Ja/EnglishConversationApp';
 import EnglishConversationAppEn from '../articles/En/EnglishConversationApp';
 import ElasticDeformationJa from '../articles/Ja/ElasticDeformation';
 import ElasticDeformationEn from '../articles/En/ElasticDeformation';
+import RPACallJa from '../articles/Ja/RPACall';
+import RPACallEn from '../articles/En/RPACall';
 
 const projects = [
     {
@@ -39,7 +41,62 @@ const projects = [
         technologies: ["Python", "NumPy", "Pillow", "Image Processing"],
         article: ElasticDeformationEn,
         articleJa: ElasticDeformationJa
-    }
+    },
+    {
+        title: "Develpoed the Automated Login at Scheduled Time",
+        titleJa: "定刻自動ログインの開発",
+        description: "",
+        descriptionJa: "",
+        date: "2022/12",
+        link: "#",
+        technologies: ["Python", "Selenium"],
+        article: RPACallEn,
+        articleJa: RPACallJa
+    },
+    {
+        title: "k-means Clustering Implementation from Scratch",
+        titleJa: "k-means クラスタリングをスクラッチから実装",
+        description: "",
+        descriptionJa: "",
+        date: "2022/12",
+        link: "#",
+        technologies: ["Python", "Numpy", "Matplotlib"],
+        article: RPACallEn,
+        articleJa: RPACallJa
+    },
+    {
+        title: "Slot Machine on CUI",
+        titleJa: "CUI 上で動くスロットマシーン",
+        description: "",
+        descriptionJa: "",
+        date: "2022/12",
+        link: "#",
+        technologies: ["Assembly", "C"],
+        article: RPACallEn,
+        articleJa: RPACallJa
+    },
+    {
+        title: "LINE Chat Bot to Send Scraping Results",
+        titleJa: "スクレイピング結果を送信する LINE Chat Bot",
+        description: "",
+        descriptionJa: "",
+        date: "2022/04",
+        link: "#",
+        technologies: ["Python", "Selenium", "LINE API"],
+        article: RPACallEn,
+        articleJa: RPACallJa
+    },
+    {
+        title: "Automation of the tool for English learning",
+        titleJa: "学内英語学習ツールの自動化",
+        description: "",
+        descriptionJa: "",
+        date: "2021",
+        link: "#",
+        technologies: ["Python", "Selenium"],
+        article: RPACallEn,
+        articleJa: RPACallJa
+    },
 ];
 
 export default projects;
