@@ -1,10 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ExternalLink } from 'lucide-react';
 
-import { useTranslation } from 'react-i18next';
-
-const ProjectTimeline = ({ projects }) => { 
-    const { t } = useTranslation();
+const ProjectTimeline = ({ projects, language }) => { 
     
     return (
         <div className="relative container mx-auto px-6 flex flex-col space-y-8">
@@ -17,21 +15,35 @@ const ProjectTimeline = ({ projects }) => {
                     <div className={`timeline-container ${index % 2 === 0 ? 'left' : 'right'}`}>
                         <div className="timeline-pointer" aria-hidden="true"></div>
                         <div className="bg-gradient-to-br from-white to-blue-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                            <span className="font-bold text-indigo-600 text-sm tracking-wide">{project.date}</span>
-                            <h3 className="text-lg font-semibold text-gray-800 pt-1">{project.title}</h3>
-                            <p className="text-sm leading-snug tracking-wide text-gray-700 text-opacity-100 mt-2">{project.description}</p>
-                            <div className="mt-4 flex flex-wrap gap-2">
-                                {project.technologies.map((tech, i) => (
-                                    <span key={i} className="px-2 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">
-                                        {tech}
-                                    </span>
-                                ))}
+                            <div className="flex flex-col">
+                                <span className="font-bold text-indigo-600 text-sm tracking-wide">{project.date}</span>
+                                <h3 className="text-lg font-semibold text-gray-800 pt-1">
+                                    {language === 'ja' ? project.titleJa : project.title}
+                                </h3>
+                                <p className="text-sm leading-snug tracking-wide text-gray-700 text-opacity-100 mt-2">
+                                {language === 'ja' ? project.descriptionJa : project.description}
+                                </p>
+                                {/* <div className="mb-4">
+                                    <img 
+                                        src={project.image} 
+                                        alt={language === 'ja' ? project.titleJa : project.title}
+                                        className="w-full h-auto rounded-lg object-cover"
+                                        style={{filter: "blur(2px)"}}
+                                    />
+                                </div> */}
+                                <div className="mt-4 flex flex-wrap gap-2">
+                                    {project.technologies.map((tech, i) => (
+                                        <span key={i} className="px-2 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                                {project.link && (
+                                    <Link to={`/${language}/project/${index}`} className="mt-2 inline-flex items-center text-blue-600 hover:underline">
+                                        {language === 'ja' ? 'プロジェクトを見る' : 'View Project'} <ExternalLink size={16} className="ml-1" />
+                                    </Link>
+                                )}
                             </div>
-                            {project.link && (
-                                <a href={project.link} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center text-blue-600 hover:underline">
-                                    View Project <ExternalLink size={16} className="ml-1" />
-                                </a>
-                            )}
                         </div>
                     </div>
                 </div>
